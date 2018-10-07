@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sketch2Code.Core.BoxGeometry
 {
+    //各种box类型的几何图形
     public class Geometry
     {
         public void AlignTop(List<BoundingBox> testBoxes)

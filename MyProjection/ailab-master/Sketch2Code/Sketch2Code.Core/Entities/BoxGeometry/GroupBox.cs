@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Sketch2Code.Core.BoxGeometry
 {
+    //一组盒子
     [DataContract]
     public class GroupBox
     {

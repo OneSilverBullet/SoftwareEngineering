@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sketch2Code.Core.BoxGeometry
 {
+    //切片的段
     public class SliceSection
     {
         public double Start;

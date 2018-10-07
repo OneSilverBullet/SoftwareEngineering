@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sketch2Code.Core.BoxGeometry.Geometry" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAEAQAQAAgAAACAAIAAAEAQAEAGAAAAAIQ=</HashCode>
+      <FileName>Entities\BoxGeometry\Geometry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.BoxGeometry.GroupBox" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAEAABAAAIAAAACAAAEYAAAACAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Entities\BoxGeometry\GroupBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.BoxGeometry.Overlap" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAgAABAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Entities\BoxGeometry\Overlap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.BoxGeometry.ProjectionRuler" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Entities\BoxGeometry\ProjectionRuler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.BoxGeometry.Section" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJAAAAAACAAAAAAAAAAAAAAAAACAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Entities\BoxGeometry\Section.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.BoxGeometry.SliceSection" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJAAAAAACAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\BoxGeometry\SliceSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.Entities.PredictedObject" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAEAAAAAIQAACAAAAAAAJAACABAAAA=</HashCode>
+      <FileName>Entities\PredictedObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.Entities.BoundingBox" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIFEAQCBBAAAAAAEAAAAAoAAAACAAiAAAAEFA=</HashCode>
+      <FileName>Entities\PredictedObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.Entities.PredictionDetail" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAgAAAgAAAAAEAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\PredictionDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.Helpers.Controls" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AVAAAAAAEAIAAAAAAAAAUAAAAAAAABAAAAAAQiAAAAA=</HashCode>
+      <FileName>Helpers\Controls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.Helpers.ImageHelper" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAEAgAAAAQAgAAAAAAAABAAAAgAAgAAA=</HashCode>
+      <FileName>Helpers\ImageHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Core.ObjectDetectionAppService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAEAABAAAACAEAQAAgAAkQBAAAIAIAAEAAAAAAQ=</HashCode>
+      <FileName>Services\ObjectDetectionAppService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" Collapsed="true" />
+  </Class>
+  <Interface Name="Sketch2Code.Core.Services.Interfaces.IObjectDetectionAppService" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAQAAAAAEABAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Services\Interfaces\IObjectDetectionAppService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Sketch2Code.Core.BoxGeometry.ProjectionAxisEnum" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Entities\BoxGeometry\ProjectionRuler.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

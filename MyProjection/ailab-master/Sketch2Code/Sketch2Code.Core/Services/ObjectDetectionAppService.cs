@@ -22,6 +22,7 @@ using Microsoft.ProjectOxford.Vision.Contract;
 
 namespace Sketch2Code.Core
 {
+    //目标检测的应用服务
     public class ObjectDetectionAppService : IObjectDetectionAppService
     {
         ObjectDetector _detectorClient;

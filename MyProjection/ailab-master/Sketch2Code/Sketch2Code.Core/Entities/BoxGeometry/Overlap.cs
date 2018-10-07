@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sketch2Code.Core.BoxGeometry
 {
+    //覆盖
     public class Overlap
     {
         const double MARGIN = 0;

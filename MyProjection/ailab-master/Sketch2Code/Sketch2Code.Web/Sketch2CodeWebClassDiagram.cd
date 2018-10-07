@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sketch2Code.Web.FilterConfig" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.RouteConfig" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.MvcApplication" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Controllers.AppController" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQABAAAEAABCAAAAEAAEDoCAAAEAAEABAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AppController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Controllers.BaseController" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Controllers\BaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Controllers.ErrorController" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ErrorController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Controllers.LayoutController" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAQCAAABIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\LayoutController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Controllers.TemplateController" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAABAAAAAAAAAAACAAAEAAAAAAECAQAAAAA=</HashCode>
+      <FileName>Controllers\TemplateController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.ErrorHandler.AiHandleErrorAttribute" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>ErrorHandler\AiHandleErrorAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Helpers.ControllerHelper" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\ControllerHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Models.ContentViewModel" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAIAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ContentViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Models.GeneratedHtmlModel" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEBAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Models\GeneratedHtmlModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Models.PredictionDetailsViewModel" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAABAAAIAAAAAACAA=</HashCode>
+      <FileName>Models\PredictionDetailsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketch2Code.Web.Models.PredictionViewModel" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PredictionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

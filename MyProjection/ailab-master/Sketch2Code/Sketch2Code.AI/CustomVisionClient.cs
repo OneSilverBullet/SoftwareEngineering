@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Sketch2Code.AI
 {
+    //自定义视觉客户端
     public abstract class CustomVisionClient
     {
         protected string _trainingApiKey;

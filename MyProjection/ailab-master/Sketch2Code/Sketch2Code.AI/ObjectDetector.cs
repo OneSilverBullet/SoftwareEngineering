@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Sketch2Code.AI
 {
+    //自定义的目标检测器。
     public class ObjectDetector : CustomVisionClient
     {
 
