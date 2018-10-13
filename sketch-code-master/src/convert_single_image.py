@@ -47,7 +47,10 @@ def main():
 
     sampler = Sampler(model_json_path=model_json_file,
                       model_weights_path = model_weights_file)
-    sampler.convert_single_image(output_folder, png_path=png_path, print_generated_output=print_generated_output, get_sentence_bleu=print_bleu_score, original_gui_filepath=original_gui_filepath, style=style)
+    sampler.convert_single_image(output_folder,
+                                 png_path=png_path, print_generated_output=print_generated_output,
+                                 get_sentence_bleu=print_bleu_score, original_gui_filepath=original_gui_filepath,
+                                 style=style)
 
 if __name__ == "__main__":
   main()

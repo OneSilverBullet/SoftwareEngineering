@@ -11,7 +11,7 @@ DEFAULT_DSL_MAPPING_FILEPATH = "{}/styles/default-dsl-mapping.json".format(BASE_
 FACEBOOK_DSL_MAPPING_FILEPATH = "{}/styles/facebook_dsl_mapping.json".format(BASE_DIR_NAME)
 AIRBNB_DSL_MAPPING_FILEPATH = "{}/styles/airbnb_dsl_mapping.json".format(BASE_DIR_NAME)
 
-
+#其对整体网络进行一个编译
 class Compiler:
     def __init__(self, style):
         style_json = self.get_stylesheet(style)
@@ -32,6 +32,7 @@ class Compiler:
         elif style == 'airbnb':
             return AIRBNB_DSL_MAPPING_FILEPATH
 
+    #依据生成的GUI数组文件来对整体的HTML代码进行输出。
     def compile(self, generated_gui):
         dsl_file = generated_gui
 

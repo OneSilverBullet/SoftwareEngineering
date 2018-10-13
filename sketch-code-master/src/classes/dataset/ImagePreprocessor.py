@@ -9,6 +9,7 @@ from PIL import Image
 import cv2
 from keras.preprocessing.image import ImageDataGenerator
 
+#图片处理类
 class ImagePreprocessor:
 
     def __init__(self):
@@ -25,6 +26,7 @@ class ImagePreprocessor:
             self.save_resized_img_arrays(resized_img_arrays, sample_ids, data_input_folder)
 
     def get_img_features(self, png_path):
+        #将对应的图片处理为对应的shape
         img_features = self.resize_img(png_path)
         assert(img_features.shape == (256,256,3))
         return img_features
@@ -82,8 +84,9 @@ class ImagePreprocessor:
         return np.array(images), np.array(labels)
 
     def resize_img(self, png_file_path):
-        img_rgb = cv2.imread(png_file_path)
-        img_grey = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
+        img_rgb = cv2.imread(png_file_path)  #读入图片
+        img_grey = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)  #窘灰度处理
+        #根据灰度图像进行自适应二值处理，从而使图像非常明显。
         img_adapted = cv2.adaptiveThreshold(img_grey, 255, cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY, 101, 9)
         img_stacked = np.repeat(img_adapted[...,None],3,axis=2)
         resized = cv2.resize(img_stacked, (200,200), interpolation=cv2.INTER_AREA)

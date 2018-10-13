@@ -58,6 +58,7 @@ class Dataset:
         file.close()
         tokenizer = Tokenizer(filters='', split=" ", lower=False)
         tokenizer.fit_on_texts([text])
+        #其并不是真正的目标检测
         vocab_size = len(tokenizer.word_index) + 1
         return tokenizer, vocab_size
 

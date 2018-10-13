@@ -52,9 +52,11 @@ class Sampler:
 
         # Generate GUI
         print("Generating code for sample ID {}".format(sample_id))
+        #生成GUI文件
         generated_gui, gui_output_filepath= self.generate_gui(png_path, print_generated_output=print_generated_output, output_folder=output_folder, sample_id=sample_id)
 
         # Generate HTML
+        #依据对应的GUI文件生成对应的HTML文件
         generated_html = self.generate_html(generated_gui, sample_id, print_generated_output=print_generated_output, output_folder=output_folder, style=style)
 
         # Get BLEU
@@ -70,22 +72,26 @@ class Sampler:
         json_file = open(model_json_path, 'r')
         loaded_model_json = json_file.read()
         json_file.close()
+        #使用keras库文件来对jason文件进行读取，并且加载对应的模型。
         loaded_model = model_from_json(loaded_model_json)
         loaded_model.load_weights(model_weights_path)
         print("\nLoaded model from disk")
         return loaded_model
 
+    #生成GUI文件
     def generate_gui(self, png_path, print_generated_output, sample_id, output_folder):
         test_img_preprocessor = ImagePreprocessor()
+        #根据preprocessor当中的方法对图像进行了特征突出处理
         img_features = test_img_preprocessor.get_img_features(png_path)
 
         in_text = '<START> '
-        photo = np.array([img_features])
+        photo = np.array([img_features]) #将得到的特征转换为np数组
         for i in range(150):
             sequence = self.tokenizer.texts_to_sequences([in_text])[0]
             sequence = pad_sequences([sequence], maxlen=MAX_LENGTH)
+            #依据图像生成gui文件
             yhat = self.model.predict([photo, sequence], verbose=0)
-            yhat = np.argmax(yhat)
+            yhat = np.argmax(yhat)  #得到对应分类的最大index
             word = self.word_for_id(yhat)
             if word is None:
                 break
@@ -99,12 +105,14 @@ class Sampler:
             print("\n=========\nGenerated GUI code:")
             print(generated_gui)
 
+        #将输出的GUI文件放置到对应的文件夹下。
         gui_output_filepath = self.write_gui_to_disk(generated_gui, sample_id, output_folder)
 
         return generated_gui, gui_output_filepath
 
+    #生成对应html文件
     def generate_html(self, gui_array, sample_id, print_generated_output, output_folder, style='default'):
-
+        #编译器
         compiler = Compiler(style)
         compiled_website = compiler.compile(gui_array)
 
@@ -119,6 +127,7 @@ class Sampler:
                 print("Saved generated HTML to {}".format(output_filepath))
 
     def word_for_id(self, integer):
+        #依据对应的index来转换生成对应的文字，类似于CNN最终的softmax过程
         for word, index in self.tokenizer.word_index.items():
             if index == integer:
                 return word
