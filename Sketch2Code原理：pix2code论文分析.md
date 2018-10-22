@@ -56,7 +56,7 @@ LSTM通过三个这样的本结构来实现信息的保护和控制。这三个�
 
 3.通过利用使用计算机视觉模型的带潜在的变量配合
 语言模型来生成正确的语言。
-
+![pix2code](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/pix2code%E6%A8%A1%E5%9E%8B.png)
 ### 视觉模型
 视觉模型使用的是CNN模型，更确切的说是VGG网络。
 作者使用CBB来进行无监督学习，将输入的图片和
