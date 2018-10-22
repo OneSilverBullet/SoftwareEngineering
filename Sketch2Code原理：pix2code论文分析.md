@@ -9,7 +9,7 @@
 ### 预备知识3:激活函数
 
 现实生活当中所有问题并不全都是线性可分的，因此在深度学习当中我们一般引入激活函数来对网络的输出进行相关的处理。每一层的输出通过这些激活函数之后，就变得比以前复杂很多，从而提升了神经网络模型的表达能力。
-
+![SIGMA函数](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/sigma%E5%87%BD%E6%95%B0.png)
 
 
 ### 预备知识3：LSTM
