@@ -11,22 +11,35 @@
 现实生活当中所有问题并不全都是线性可分的，因此在深度学习当中我们一般引入激活函数来对网络的输出进行相关的处理。每一层的输出通过这些激活函数之后，就变得比以前复杂很多，从而提升了神经网络模型的表达能力。
 ![SIGMA函数](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/sigma%E5%87%BD%E6%95%B0.png)
 
+![TANH函数](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/tan%E5%87%BD%E6%95%B0.png)
+
 
 ### 预备知识3：LSTM
 目的：为了解决，是为了解决长期以来问题而专门设计出来的。LSTM 同样是这样的结构，但是重复的模块拥有一个不同的结构。不同于单一神经网络层，这里是有四个，以一种非常特殊的方式进行交互。
+![核心思想](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/LSTM.jpg)
+
+![核心思想2](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/LSTM.png)
+
 
 核心思想：LSTM的关键在于细胞的状态整个(绿色的图表示的是一个cell)，和穿过细胞的那条水平线。细胞状态类似于传送带。直接在整个链上运行，只有一些少量的线性交互。信息在上面流传保持不变会很容易。
+![核心思想3](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/LSTM1.jpg
+)
 
 LSTM通过三个这样的本结构来实现信息的保护和控制。这三个门分别输入门、遗忘门和输出门。
-1. 遗忘门
+
+1.遗忘门
 第一步是决定从细胞状态中丢弃什么信息。这个决定通过一个称为忘记门层完成。该门会读取ht−1和xt，输出一个在 0到 1之间的数值给每个在细胞状态 Ct−1 中的数字。1 表示“完全保留”，0 表示“完全舍弃”。
+![核心思想4](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/LSTM2.jpg)
 
 2.输入门
 决定让多少新的信息加入到 cell 状态 中来。实现这个需要包括两个 步骤：首先，一个叫做“input gate layer ”的 sigmoid 层决定哪些信息需要更新；一个 tanh 层生成一个向量，也就是备选的用来更新的内容，C^t 。在下一步，我们把这两部分联合起来，对 cell 的状态进行一个更新。
+![输入门](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/LSTM3.jpg)
+
+![输入门](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/LSTM4.jpg)
 
 3.输出门
 最终确定输出什么值。这个输出将会基于细胞状态，但是也是一个过滤后的版本。首先，运行一个 sigmoid 层来确定细胞状态的哪个部分将输出出去。接着，把细胞状态通过 tanh 进行处理（得到一个在-1到1之间的值）并将它和sigmoid门的输出相乘，最终我们仅仅会输出确定输出的那部分。
-
+![输出门](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/LSTM5.jpg)
 
 ### 基本想法
 
@@ -87,12 +100,20 @@ image_model.add(Dropout(0.3))
 pix2code模型使用无监督训练。输入一个图片I与文本序列X（是当前图片的DSL）。将正确的Xt作为目标label。首先使用CNN将图片输出成一个向量p。
 然后将输入x使用LSTM语言模型进行编码，编码形成一个中间表示q。然后将p与q两个向量进行串联，形成单一特征向量r,将这个向量继续输入到下一个LSTM当中。第二个LSTM模型解释了前面的LSTM与CNN的特征输出。从而将IMAGE的特征输出与DSL的特征输出联系了起来。
 当前架构允许整个pix2code模型进行端到端梯度下降优化，来根据时间预测一个DSL序列。
+![DECODE](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/Decoder.png)
+
+
 
 ### 实验
 训练序列的长度T对于建立长期依赖关系很重要。经过实证实验，将用于训练的DSL输入文件用一个大小为滑动窗口进行分割成48：我们展开递归神经网络48步，这种方法是最好的。对于每一个标记，在该模型同时具有输入图像和上下文序列T = 48的标记。
 
 因为根本没有相应的数据集来进行训练，也就是IMAGE与DSL简码之间的数据集，因此作者是用来自己的数据集进行解释。（表示怀疑）就是表中描述的三个数据集。合成器指的是可以使用随机用户界面生成器合成的GUI配置的最大个数。实例指的是合成的(GUI截图，GUI代码)文件对的数量。样本指的是不同的图像序列对的数量。实际上，训练和采样一次只做一个令牌，方法是向模型输入一个图像和一个固定大小T。
-
-
+![训练数据集](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E9%9B%86.png)
 
 ### 实验结果
+
+![训练结果](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C.png)
+
+具体使用的损失函数如下：
+
+![损失函数](https://github.com/OneSilverBullet/SoftwareEngineering/blob/master/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%9B%BE%E7%89%87/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.png)
