@@ -145,3 +145,9 @@ DSL的特点是，简单而且特点明显。这注定不能够使用DSL去表�
 * TerminalExpression:实现与文法终结符相关的操作。
 * NonterminalExpression:每个符号都维护一个AbstractExpression。其中递归
 调用解释操作。
+
+我们可以通过INTERPRETER来生成一些简单的程序。在这个基础上，我使用C++开始对
+INTERPRETER模式进行一个实现，从而复现Sketch2code当中代码编译器的原理。我
+将会设计一个简单的程序模型来说明语法树编译的原理。而这个简单的道理对于
+Sketch2Code这个简单的程序已经非常足够了。
+
