@@ -35,7 +35,6 @@ class Compiler:
     #依据生成的GUI数组文件来对整体的HTML代码进行输出。
     def compile(self, generated_gui):
         dsl_file = generated_gui
-
         #Parse fix
         dsl_file = dsl_file[1:-1]
         dsl_file = ' '.join(dsl_file)
@@ -43,7 +42,6 @@ class Compiler:
         dsl_file = dsl_file.replace(' ', '')
         dsl_file = dsl_file.split('8')
         dsl_file = list(filter(None, dsl_file))
-
         current_parent = self.root
         for token in dsl_file:
             token = token.replace(" ", "").replace("\n", "")
