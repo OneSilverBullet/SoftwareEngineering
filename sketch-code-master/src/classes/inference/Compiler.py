@@ -38,6 +38,7 @@ class Compiler:
         #Parse fix
         dsl_file = dsl_file[1:-1]
         dsl_file = ' '.join(dsl_file)
+        #将DSL进行填充之后，再进行分割
         dsl_file = dsl_file.replace('{', '{8').replace('}', '8}8')
         dsl_file = dsl_file.replace(' ', '')
         dsl_file = dsl_file.split('8')
@@ -45,8 +46,7 @@ class Compiler:
         current_parent = self.root
         for token in dsl_file:
             token = token.replace(" ", "").replace("\n", "")
-
-            if token.find(self.opening_tag) != -1:
+            if token.find(self.opening_tag) != -1:   #如果不是开始标注的符号
                 token = token.replace(self.opening_tag, "")
                 element = Node(token, current_parent, self.content_holder)
                 current_parent.add_child(element)
@@ -58,7 +58,6 @@ class Compiler:
                 for t in tokens:
                     element = Node(t, current_parent, self.content_holder)
                     current_parent.add_child(element)
-
         output_html = self.root.render(self.dsl_mapping)
         if output_html is None: return "HTML Parsing Error"
 
